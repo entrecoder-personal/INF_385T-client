@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import config from "../config.json";
 
 const Product = (props) => (
   <div className="col" key={props.product.title}>
@@ -21,7 +22,7 @@ export default function ProductList() {
  //This method fetches the records from the database.
  useEffect(() => {
    async function getProducts() {
-     const response = await fetch("http://localhost:5050/products");
+     const response = await fetch(config.SERVER_URL+"/products");
  
      if (!response.ok) {
        const message = `An error occurred: ${response.statusText}`;
