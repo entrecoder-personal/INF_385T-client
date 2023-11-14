@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import config from "../config.json";
+// import config from "../config.json";
 
 const Product = (props) => (
   <div className="col" key={props.product.title}>
@@ -22,7 +22,7 @@ export default function ProductList() {
  //This method fetches the records from the database.
  useEffect(() => {
    async function getProducts() {
-     const response = await fetch(config.SERVER_URL+"/products");
+     const response = await fetch("https://inf-385-t-api.vercel.app/products");
  
      if (!response.ok) {
        const message = `An error occurred: ${response.statusText}`;
