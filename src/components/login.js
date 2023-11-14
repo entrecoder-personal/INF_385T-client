@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import "bootstrap/dist/css/bootstrap.css";
 //import "bootstrap/dist/css/bootstrap.min.css";
-import config from "../config.json";
+// import config from "../config.json";
  
 export default function Login() {
  const [form, setForm] = useState({
@@ -28,7 +28,7 @@ export default function Login() {
    // When a post request is sent to the create url, we'll add a new record to the database.
    const loginCredentials = { ...form };
  
-   await fetch(config.SERVER_URL+"/login", {
+   await fetch("https://inf-385-t-api.vercel.app/login", {
      method: "POST",
      headers: {
        "Content-Type": "application/json",

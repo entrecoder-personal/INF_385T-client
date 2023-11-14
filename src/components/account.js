@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import "bootstrap/dist/css/bootstrap.css";
 //import "bootstrap/dist/css/bootstrap.min.css";
-import config from "../config.json";
+
  
 export default function Account() {
  const [form, setForm] = useState({
@@ -24,7 +24,7 @@ export default function Account() {
  useEffect(() => {
     async function getAccountInfo() {
        const email = "dajuzzy@yahoo.com";
-      const response = await fetch(config.SERVER_URL+"/account/"+ email);
+      const response = await fetch("https://inf-385-t-api.vercel.app/account/"+ email);
   
       if (!response.ok) {
         const message = 'An error occurred: ${response.statusText}';
